@@ -6,7 +6,7 @@ The code enables the efficient rendering of depth maps from 3D triangle meshes.
 To use the code, first compile the Cython code via 
 
 ```bash
-python setup.py build-ext --inplace
+python setup.py build_ext --inplace
 ```
 
 You can then use the rendering function
