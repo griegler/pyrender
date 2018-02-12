@@ -5,15 +5,16 @@ from Cython.Distutils import build_ext
 import numpy as np
 import platform
 
-extra_compile_args = []
+extra_compile_args = ['-O3', '-std=c++11']
 extra_link_args = ['-lGLEW', '-lglut']
 
 if platform.system() == 'Darwin':
-  extra_link_args.append('-framework OpenGL')
-  extra_link_args.append('-framework GLU')
+  extra_link_args.append('-F/System/Library/Frameworks')
 else:
   extra_link_args.append('-lGL')
   extra_link_args.append('-lGLU')
+  extra_link_args.append('-fopenmp')
+  extra_compile_args.append('-fopenmp')
 
 setup(
   name="pyrender",
