@@ -12,11 +12,11 @@
 #include <GL/glut.h>
 
 class OffscreenGL {
-  
+
 public:
   OffscreenGL(int maxHeight, int maxWidth);
   ~OffscreenGL();
-  
+
 private:
   static int glutWin;
   static bool glutInitialized;
@@ -26,6 +26,6 @@ private:
 };
 
 
-void renderDepthMesh(double *FM, int fNum, double *VM, int vNum, double *CM, double *intrinsics, int *imgSizeV, double *zNearFarV, unsigned char * imgBuffer, float *depthBuffer, bool *maskBuffer, double linewidth, bool coloring, bool one_offset);
+void renderDepthMesh(int *FM, int fNum, double *VM, int vNum, double *intrinsics, int *imgSizeV, double *zNearFarV, float *depthBuffer);
 
-#endif 
+#endif

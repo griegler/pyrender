@@ -10,6 +10,8 @@ extra_link_args = ['-lGLEW', '-lglut']
 
 if platform.system() == 'Darwin':
   extra_link_args.append('-F/System/Library/Frameworks')
+  extra_compile_args.append('-stdlib=libc++')
+  extra_link_args.append('-stdlib=libc++')
 else:
   extra_link_args.append('-lGL')
   extra_link_args.append('-lGLU')

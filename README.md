@@ -14,11 +14,11 @@ You can then use the rendering function
 ```python
 import pyrender
 ...
-# vertices: a 3xN double numpy array
-# faces: a 3xN double array (indices of vertices array)
+# vertices: a Nx3 double numpy array
+# faces: a Nx3 int array (indices of vertices array)
 # cam_intr: (fx, fy, px, py) double vector
-# img_size: (width, height) int vector
-depth, mask, img = pyrender.render(vertices, faces, cam_intr, img_size)
+# img_size: (height, width) int vector
+depth, mask = pyrender.render(vertices, faces, cam_intr, img_size)
 ```
 
 Make sure `pyrender` is in your `$PYTHONPATH`.
